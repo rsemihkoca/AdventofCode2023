@@ -16,29 +16,17 @@ def Solution(lines: list[str]) -> int:
   
     }
 
-    sorted_mapping = dict(sorted(mapping.items(), key=lambda x: len(x[0]), reverse=True))
-
-
     total = 0
 
     for line in lines:
 
-        print("LINE BEGINS: ", line, sep="")
 
-        for key, value in sorted_mapping.items():
+        for key, value in mapping.items():
             line = line.replace(key, value)
-
-        print("LINE REPLACED: ", line, sep="")
         
         line = ''.join([i for i in line if i.isdigit()])
 
-        print("LINE PRODUCED: ", line, sep="")
-
         value = int(line[0] + line[-1])
-
-        print("VALUE: ", value, sep="")
-
-        print()
 
         total += value
     
