@@ -44,31 +44,32 @@ with open('input.txt') as f:
             
             results[ID].append(color_count)
         
-        pprint(results)
+        # pprint(results)
 
-        for key, value in results.items():
+for key, value in results.items():
+
+    sub_total = 0
+    blue = 0
+    red = 0
+    green = 0
+
+    for game in value:
+
+        red = max(red, game['red'])
+        blue = max(blue, game['blue'])
+        green = max(green, game['green'])
 
 
-            blue = 0
-            red = 0
-            green = 0
+    sub_total = red * blue * green
+    total += sub_total
+    
+    print(sub_total)
+    print(total)
 
-            for game in value:
-
-                red = max(red, game['red'])
-                blue = max(blue, game['blue'])
-                green = max(green, game['green'])
-
-
-            value = red * blue * green
-            total += value
-
-        print(sum(total))
 
 
 
 """
-113600
-2913 **
+55593 **
 
 """
