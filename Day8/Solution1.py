@@ -42,3 +42,7 @@ while dir:=next(directions):
     if new_prov == 'ZZZ':
         break
 print(result)
+"""
+new_prov = 'AAA'
+yerine ilk satır TFZ'yi yazmışım
+"""
